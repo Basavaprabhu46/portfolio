@@ -1,0 +1,1223 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Basava Prabhu - Portfolio</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&amp;family=Epilogue:wght@100..900&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f7f3f2",
+              "on-secondary-container": "#626360",
+              "on-tertiary-container": "#868381",
+              "error-container": "#ffdad6",
+              primary: "#000000",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#fdf8f8",
+              "inverse-primary": "#c9c6c5",
+              "on-error-container": "#93000a",
+              "secondary-fixed": "#e3e2df",
+              muted: "#888888",
+              "primary-container": "#1c1b1b",
+              "on-tertiary-fixed-variant": "#484645",
+              "on-background": "#1c1b1b",
+              "primary-fixed": "#e5e2e1",
+              "on-secondary-fixed-variant": "#464744",
+              "secondary-container": "#e0e0dc",
+              "invert-bg": "#0A0A0A",
+              error: "#ba1a1a",
+              "tertiary-fixed": "#e6e1df",
+              tertiary: "#000000",
+              outline: "#747878",
+              "outline-variant": "#c4c7c7",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#1d1b1a",
+              bg: "#F5F4F0",
+              border: "#D0D0D0",
+              ink: "#0A0A0A",
+              "surface-container-highest": "#e5e2e1",
+              background: "#fdf8f8",
+              "surface-container-high": "#ebe7e6",
+              "on-primary-fixed-variant": "#474646",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed-dim": "#c7c7c3",
+              secondary: "#5e5f5c",
+              "inverse-on-surface": "#f4f0ef",
+              "on-primary-container": "#858383",
+              "on-surface-variant": "#444748",
+              "on-error": "#ffffff",
+              "on-secondary-fixed": "#1b1c1a",
+              "inverse-surface": "#313030",
+              "surface-dim": "#ddd9d8",
+              "primary-fixed-dim": "#c9c6c5",
+              "surface-variant": "#e5e2e1",
+              "surface-tint": "#5f5e5e",
+              "surface-container": "#f1edec",
+              surface: "#EBEBEB",
+              "on-primary-fixed": "#1c1b1b",
+              "on-tertiary-fixed": "#1d1b1a",
+              "invert-fg": "#F5F4F0",
+              "on-surface": "#1c1b1b",
+              "tertiary-fixed-dim": "#cac6c3",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "section-gap": "10rem",
+              gutter: "clamp(1.5rem, 5vw, 5rem)",
+              base: "8px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "label-caps": ["DM Mono"],
+              "display-hero": ["Bebas Neue"],
+              body: ["DM Mono"],
+              h1: ["DM Serif Display"],
+              "section-number": ["Bebas Neue"],
+              metadata: ["DM Mono"],
+            },
+            fontSize: {
+              "label-caps": [
+                "0.75rem",
+                {
+                  lineHeight: "1.0",
+                  letterSpacing: "0.2em",
+                  fontWeight: "500",
+                },
+              ],
+              "display-hero": [
+                "clamp(4rem, 16vw, 18rem)",
+                {
+                  lineHeight: "1.0",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "400",
+                },
+              ],
+              body: ["1rem", { lineHeight: "1.7", fontWeight: "400" }],
+              h1: [
+                "clamp(2.5rem, 6vw, 4rem)",
+                { lineHeight: "1.2", fontWeight: "400" },
+              ],
+              "section-number": [
+                "8rem",
+                { lineHeight: "1.0", fontWeight: "400" },
+              ],
+              metadata: ["0.875rem", { lineHeight: "1.5", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        display: inline-block;
+        line-height: 1;
+      }
+
+      body {
+        cursor: none;
+      }
+
+      .custom-cursor {
+        width: 8px;
+        height: 8px;
+        background: #0a0a0a;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.22s ease,
+          height 0.22s ease,
+          background-color 0.22s ease,
+          border 0.22s ease,
+          backdrop-filter 0.22s ease,
+          -webkit-backdrop-filter 0.22s ease,
+          box-shadow 0.22s ease;
+        will-change:
+          width, height, background-color, border, backdrop-filter, box-shadow;
+      }
+
+      .custom-cursor.is-name-hover {
+        width: 148px;
+        height: 148px;
+        background: transparent;
+        border: 1.5px solid #0a0a0a;
+      }
+
+      #contact .custom-cursor.is-name-hover,
+      .custom-cursor.is-name-hover.cursor-on-dark {
+        border-color: #f5f4f0;
+      }
+
+      .hero-name-shell {
+        transform-origin: center center;
+        will-change: transform;
+      }
+
+      .hero-name {
+        position: relative;
+        display: block;
+        transform-origin: center center;
+        will-change: transform;
+        --reveal-x: 50%;
+        --reveal-y: 50%;
+        --reveal-radius: 74px;
+      }
+
+      .hero-name::after {
+        content: attr(data-text);
+        position: absolute;
+        inset: 0;
+        color: #f5f4f0;
+        -webkit-text-stroke: 1.5px #0a0a0a;
+        opacity: 0;
+        pointer-events: none;
+        clip-path: circle(
+          var(--reveal-radius) at var(--reveal-x) var(--reveal-y)
+        );
+        transition: opacity 0.18s ease;
+      }
+
+      .hero-name.is-hollow-hover::after {
+        opacity: 1;
+      }
+
+      .surgical-underline {
+        position: relative;
+      }
+
+      .surgical-underline::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -2px;
+        left: 0;
+        background-color: currentColor;
+        transition: width 0.3s ease;
+      }
+
+      .surgical-underline:hover::after {
+        width: 100%;
+      }
+
+      .reveal-3d,
+      .animate-3d,
+      .scroll-3d-item,
+      .scroll-3d-effect {
+        opacity: 0;
+        transform: perspective(1200px) rotateX(15deg) translateY(40px)
+          scale(0.95);
+        transition:
+          opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1),
+          transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        will-change: opacity, transform;
+      }
+
+      .is-revealed,
+      .in-view {
+        opacity: 1;
+        transform: perspective(1200px) rotateX(0deg) translateY(0) scale(1);
+      }
+
+      .project-row:hover .arrow-icon {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .arrow-icon {
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+      }
+
+      .row-hover-effect {
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .row-hover-effect:hover {
+        background-color: #0a0a0a;
+        color: #f5f4f0;
+      }
+
+      .row-hover-effect:hover .metadata-text {
+        color: #888888;
+      }
+
+      .row-hover-effect:hover .border-color-swap {
+        border-color: #333333;
+      }
+
+      .inversion-row:hover {
+        background-color: #0a0a0a;
+        color: #f5f4f0;
+      }
+    </style>
+  </head>
+
+  <body class="bg-bg text-ink font-body selection:bg-ink selection:text-bg">
+    <div class="custom-cursor hidden md:block"></div>
+
+    <!-- Top Navigation Shell -->
+    <header
+      class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-sm border-b border-zinc-200 dark:border-zinc-800"
+    >
+      <nav
+        class="flex justify-between items-center px-6 md:px-12 py-6 w-full max-w-container-max mx-auto"
+      >
+        <a
+          href="#home"
+          class="font-['Epilogue'] font-black text-2xl tracking-tighter text-zinc-900 dark:text-zinc-100 reveal-3d"
+        >
+          BASAVA PRABHU
+        </a>
+        <div
+          class="hidden md:flex gap-8 items-center reveal-3d"
+          style="transition-delay: 100ms"
+        >
+          <a
+            class="font-['DM_Mono'] uppercase tracking-widest text-xs text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="font-['DM_Mono'] uppercase tracking-widest text-xs text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300"
+            href="#projects"
+            >Work</a
+          >
+          <a
+            class="font-['DM_Mono'] uppercase tracking-widest text-xs text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300"
+            href="#photography"
+            >Photography</a
+          >
+          <a
+            class="font-['DM_Mono'] uppercase tracking-widest text-xs text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+        <div class="md:hidden">
+          <span class="material-symbols-outlined text-ink">menu</span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section
+        id="home"
+        class="relative min-h-[1024px] w-full flex flex-col justify-center px-gutter pt-24 pb-12 overflow-hidden bg-bg"
+      >
+        <div class="max-w-container-max mx-auto w-full z-10">
+          <div
+            class="flex flex-col gap-4 mb-8 reveal-3d"
+            style="transition-delay: 200ms"
+          >
+            <p class="font-label-caps text-label-caps text-secondary uppercase">
+              // CSE STUDENT &amp; AI/ML ENTHUSIAST
+            </p>
+            <p class="font-metadata text-metadata text-ink opacity-60">
+              PES University, Bengaluru · 2024–2028
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full flex flex-col justify-center items-center select-none py-12"
+        >
+          <div class="reveal-3d" style="transition-delay: 300ms">
+            <div class="hero-name-shell" id="hero-name-shell">
+              <h1
+                class="font-display-hero text-display-hero uppercase leading-none whitespace-nowrap text-ink tracking-tight w-full text-center cursor-pointer hero-name"
+                data-text="BASAVA PRABHU"
+                id="hero-name"
+              >
+                BASAVA PRABHU
+              </h1>
+            </div>
+          </div>
+          <div
+            class="max-w-2xl mx-auto text-center px-4 mt-6 md:mt-8 reveal-3d"
+            style="transition-delay: 400ms"
+          >
+            <p
+              class="font-body text-sm md:text-base text-ink/70 leading-relaxed"
+            >
+              CSE student at PES University, Bengaluru, interested in AI, ML,
+              and understanding how LLMs work. Skilled in C, Python, and
+              JavaScript, with a good base in DSA and problem solving. Curious
+              about the math behind intelligent systems and always looking to
+              build and collaborate on real-world projects.
+            </p>
+          </div>
+        </div>
+        <div
+          class="max-w-container-max mx-auto w-full flex justify-between items-end mt-auto z-10"
+        >
+          <div
+            class="flex flex-col gap-2 reveal-3d"
+            style="transition-delay: 500ms"
+          >
+            <a
+              href="#about"
+              class="flex items-center gap-4 group cursor-pointer"
+            >
+              <span
+                class="font-label-caps text-label-caps text-ink tracking-widest"
+                >[ scroll ]</span
+              >
+              <div
+                class="h-[1px] w-12 bg-ink/20 group-hover:w-24 transition-all duration-500"
+              ></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION (Joined below hero) -->
+      <section
+        id="about"
+        class="max-w-container-max mx-auto px-gutter pt-32 pb-20 border-t border-border"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-[45%_55%] gap-20 items-start">
+          <div class="flex flex-col gap-8">
+            <div class="flex flex-col items-start animate-3d">
+              <h2 class="font-h1 text-h1 text-ink uppercase tracking-tight">
+                ABOUT ME
+              </h2>
+            </div>
+            <div class="max-w-md animate-3d" style="transition-delay: 0.1s">
+              <p class="font-body text-body text-ink/80 mb-6">
+                An engineering student deeply immersed in the architectural
+                foundations of modern computation. My work bridges the gap
+                between raw code and human-centric design, focusing on the
+                elegance of structural logic and the efficiency of intelligent
+                systems.
+              </p>
+              <p class="font-body text-body text-ink/80">
+                Currently exploring the frontiers of artificial intelligence at
+                PES University, seeking to build tools that amplify human
+                capability through LLMs and scalable machine learning
+                frameworks.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col gap-12 mt-4 md:mt-32">
+            <div
+              class="grid grid-cols-1 gap-0 border-t border-border animate-3d"
+              style="transition-delay: 0.2s"
+            >
+              <div
+                class="inversion-row border-b border-border flex justify-between items-center py-6 px-4 transition-all duration-300 group cursor-default"
+              >
+                <span
+                  class="font-label-caps text-label-caps opacity-50 group-hover:opacity-100"
+                  >UNIVERSITY</span
+                >
+                <span class="font-body text-body font-medium"
+                  >PES UNIVERSITY</span
+                >
+              </div>
+              <div
+                class="inversion-row border-b border-border flex justify-between items-center py-6 px-4 transition-all duration-300 group cursor-default"
+              >
+                <span
+                  class="font-label-caps text-label-caps opacity-50 group-hover:opacity-100"
+                  >DEGREE</span
+                >
+                <span class="font-body text-body font-medium">B.TECH CSE</span>
+              </div>
+              <!-- <div
+                            class="inversion-row border-b border-border flex justify-between items-center py-6 px-4 transition-all duration-300 group cursor-default">
+                            <span class="font-label-caps text-label-caps opacity-50 group-hover:opacity-100">CGPA</span>
+                            <span class="font-body text-body font-medium">7.5</span>
+                        </div> -->
+              <div
+                class="inversion-row border-b border-border flex justify-between items-center py-6 px-4 transition-all duration-300 group cursor-default"
+              >
+                <span
+                  class="font-label-caps text-label-caps opacity-50 group-hover:opacity-100"
+                  >SEMESTER</span
+                >
+                <span class="font-body text-body font-medium">4TH</span>
+              </div>
+
+              <div
+                class="inversion-row border-b border-border flex flex-col md:flex-row justify-between items-start md:items-center py-6 px-4 transition-all duration-300 group cursor-default gap-4"
+              >
+                <span
+                  class="font-label-caps text-label-caps opacity-50 group-hover:opacity-100"
+                  >INTERESTS</span
+                >
+                <div
+                  class="flex flex-wrap gap-x-3 gap-y-1 font-body text-body font-medium"
+                >
+                  <span>AI</span><span class="opacity-30">·</span><span>ML</span
+                  ><span class="opacity-30">·</span><span>LLMs</span>
+                </div>
+              </div>
+              <div
+                class="inversion-row border-b border-border flex justify-between items-center py-6 px-4 transition-all duration-300 group cursor-default"
+              >
+                <span
+                  class="font-label-caps text-label-caps opacity-50 group-hover:opacity-100"
+                  >OTHERS</span
+                >
+                <span class="font-body text-body font-medium"
+                  >COLLEGE MEDIA CLUB CORE Member</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Stack (Updated based on image + resume) -->
+        <div class="mt-40 border-t border-border pt-20">
+          <h2
+            class="font-label-caps text-label-caps mb-12 opacity-50 animate-3d"
+          >
+            TECHNICAL STACK / CAPABILITIES
+          </h2>
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+            <div
+              class="flex flex-col gap-4 animate-3d"
+              style="transition-delay: 0.1s"
+            >
+              <span class="font-label-caps text-[10px] text-border"
+                >01 / LANGUAGES</span
+              >
+              <ul class="font-body text-body space-y-1">
+                <li>PYTHON</li>
+                <li>C</li>
+                <li>JAVASCRIPT</li>
+              </ul>
+            </div>
+            <div
+              class="flex flex-col gap-4 animate-3d"
+              style="transition-delay: 0.2s"
+            >
+              <span class="font-label-caps text-[10px] text-border"
+                >02 / WEB TECH</span
+              >
+              <ul class="font-body text-body space-y-1">
+                <li>HTML5 &amp; CSS3</li>
+                <li>MERN STACK</li>
+                <li>FLASK</li>
+              </ul>
+            </div>
+            <div
+              class="flex flex-col gap-4 animate-3d"
+              style="transition-delay: 0.3s"
+            >
+              <span class="font-label-caps text-[10px] text-border"
+                >03 / DATABASES &amp; AI</span
+              >
+              <ul class="font-body text-body space-y-1">
+                <li>MONGODB</li>
+                <li>CHROMADB</li>
+                <li>LANGCHAIN</li>
+                <li>OPENAI</li>
+              </ul>
+            </div>
+            <div
+              class="flex flex-col gap-4 animate-3d"
+              style="transition-delay: 0.4s"
+            >
+              <span class="font-label-caps text-[10px] text-border"
+                >04 / CORE CS</span
+              >
+              <ul class="font-body text-body space-y-1">
+                <li>DSA &amp; DAA</li>
+                <li>CN &amp; OS</li>
+              </ul>
+            </div>
+            <div
+              class="flex flex-col gap-4 animate-3d"
+              style="transition-delay: 0.5s"
+            >
+              <span class="font-label-caps text-[10px] text-border"
+                >05 / CREATIVE</span
+              >
+              <ul class="font-body text-body space-y-1">
+                <li>BLENDER</li>
+                <li>PHOTOSHOP</li>
+                <li>LIGHTROOM</li>
+                <li>DIGITAL ART</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section
+        id="projects"
+        class="max-w-container-max mx-auto px-gutter pt-40 pb-20 border-t border-border"
+      >
+        <div class="flex items-end justify-between mb-20 animate-3d">
+          <div class="flex flex-col">
+            <h2 class="font-h1 text-h1 text-ink">Projects</h2>
+          </div>
+          <div class="max-w-md pb-4 hidden md:block">
+            <p class="font-body text-body text-secondary">
+              A curated collection of engineering solutions and experimental
+              interfaces developed at the intersection of logic and aesthetics.
+            </p>
+          </div>
+        </div>
+        <div class="mb-32 animate-3d" style="transition-delay: 0.1s">
+          <div
+            class="group relative overflow-hidden bg-primary-container text-white p-8 md:p-16 min-h-[600px] flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start z-10">
+              <div class="flex flex-col gap-2">
+                <span
+                  class="font-label-caps text-label-caps text-on-primary-container"
+                  >FEATURED WORK</span
+                >
+                <h3
+                  class="font-display-hero text-7xl md:text-9xl uppercase tracking-tight"
+                >
+                  Vigilex AI
+                </h3>
+              </div>
+              <div class="flex gap-4">
+                <span
+                  class="font-metadata text-metadata border border-white/20 px-3 py-1 rounded-full"
+                  >AI/ML</span
+                >
+                <span
+                  class="font-metadata text-metadata border border-white/20 px-3 py-1 rounded-full"
+                  >RAG</span
+                >
+              </div>
+            </div>
+            <div
+              class="relative w-full aspect-video md:absolute md:right-[-10%] md:bottom-[-10%] md:w-3/4 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+            >
+              <img
+                alt="Tech Interface"
+                class="w-full h-full object-cover grayscale brightness-50 contrast-125"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg7U5b2rKygHSoRB1L6BEIFNyy-HnD13LAqEgSYQJYb34-Z8I-BwlyoknIj9rwVGtNnioPBeFuLAAwIpGuijOOqaXLIU-5szfeoCgZS8nymQVIuGPJc6jSa2-d9jW-WxVXXV2jfusEvNDD4M8Xf1EHU3IIbm86vA9y9EorU4aJzeKydzcYpScVIYXlmTVkj6bk16whqSWc_mjq9SJCAtcJMw-anyIeF0CoWWCwPXF6J58Fe64RUer165HBzaLU-PzvIQeJEjRyNrfG"
+              />
+            </div>
+            <div class="z-10 max-w-xl">
+              <p class="font-body text-xl md:text-2xl mb-8 text-white/80">
+                An AI-powered privacy policy analyzer and legal Q&A tool built
+                with RAG (Retrieval-Augmented Generation), grounded in the DPDP
+                Act 2023, GDPR, and the IT Act 2000.
+              </p>
+              <div class="flex flex-wrap gap-8">
+                <a
+                  class="inline-flex items-center gap-4 font-label-caps text-label-caps border-b border-white pb-2 hover:gap-6 transition-all"
+                  href="https://github.com/Basavaprabhu46/Vigilex-AI"
+                  target="_blank"
+                >
+                  GITHUB
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="open_in_new"
+                    >open_in_new</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col text-ink animate-3d"
+          style="transition-delay: 0.2s"
+        >
+          <div
+            class="row-hover-effect border-t border-border py-12 px-4 group project-row flex flex-col md:flex-row items-start md:items-center justify-between gap-8 cursor-pointer relative"
+          >
+            <div class="flex items-center gap-12 flex-1">
+              <span
+                class="font-label-caps text-label-caps opacity-40 group-hover:opacity-60"
+                >[ 01 ]</span
+              >
+              <div class="flex flex-col gap-2">
+                <h3
+                  class="font-h1 text-4xl group-hover:italic transition-all duration-300 ease-in"
+                >
+                  LSA SMS Spam Detection
+                </h3>
+                <p
+                  class="font-metadata text-metadata text-secondary metadata-text max-w-md"
+                >
+                  SVD + TF-IDF based spam classifier using orthogonal projection
+                  and centroid classification.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 md:w-1/4 md:justify-end">
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >PYTHON</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >NUMPY</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >ML</span
+              >
+            </div>
+            <div class="flex items-center gap-6 z-10 relative">
+              <a
+                class="font-label-caps text-xs hover:underline"
+                href="https://github.com/Basavaprabhu46/Latent-Semantic-Analysis-SMS-Spam-Detection"
+                target="_blank"
+                >GITHUB</a
+              >
+              <div class="arrow-icon">
+                <span
+                  class="material-symbols-outlined text-4xl"
+                  data-icon="north_east"
+                  >north_east</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="row-hover-effect border-t border-border py-12 px-4 group project-row flex flex-col md:flex-row items-start md:items-center justify-between gap-8 cursor-pointer relative"
+          >
+            <div class="flex items-center gap-12 flex-1">
+              <span
+                class="font-label-caps text-label-caps opacity-40 group-hover:opacity-60"
+                >[ 02 ]</span
+              >
+              <div class="flex flex-col gap-2">
+                <h3
+                  class="font-h1 text-4xl group-hover:italic transition-all duration-300 ease-in"
+                >
+                  Typing Speed Test
+                </h3>
+                <p
+                  class="font-metadata text-metadata text-secondary metadata-text max-w-md"
+                >
+                  Precision-focused web application measuring WPM and accuracy
+                  with real-time feedback loops.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 md:w-1/4 md:justify-end">
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >MERN</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >MONGODB</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >TAILWIND</span
+              >
+            </div>
+            <div class="flex items-center gap-6 z-10 relative">
+              <a
+                class="font-label-caps text-xs hover:underline"
+                href="https://github.com/Basavaprabhu46"
+                target="_blank"
+                >GITHUB</a
+              >
+              <div class="arrow-icon">
+                <span
+                  class="material-symbols-outlined text-4xl"
+                  data-icon="north_east"
+                  >north_east</span
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="row-hover-effect border-t border-border py-12 px-4 group project-row flex flex-col md:flex-row items-start md:items-center justify-between gap-8 cursor-pointer relative"
+          >
+            <div class="flex items-center gap-12 flex-1">
+              <span
+                class="font-label-caps text-label-caps opacity-40 group-hover:opacity-60"
+                >[ 03 ]</span
+              >
+              <div class="flex flex-col gap-2">
+                <h3
+                  class="font-h1 text-4xl group-hover:italic transition-all duration-300 ease-in"
+                >
+                  Library Management System
+                </h3>
+                <p
+                  class="font-metadata text-metadata text-secondary metadata-text max-w-md"
+                >
+                  Built a GUI-based application to manage books and users.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 md:w-1/4 md:justify-end">
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >PYTHON</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >Tkinter</span
+              >
+            </div>
+            <div class="flex items-center gap-6 z-10 relative"></div>
+          </div>
+          <div
+            class="row-hover-effect border-t border-border py-12 px-4 group project-row flex flex-col md:flex-row items-start md:items-center justify-between gap-8 cursor-pointer relative"
+          >
+            <div class="flex items-center gap-12 flex-1">
+              <span
+                class="font-label-caps text-label-caps opacity-40 group-hover:opacity-60"
+                >[ 04 ]</span
+              >
+              <div class="flex flex-col gap-2">
+                <h3
+                  class="font-h1 text-4xl group-hover:italic transition-all duration-300 ease-in"
+                >
+                  Exam Paper Distributor
+                </h3>
+                <p
+                  class="font-metadata text-metadata text-secondary metadata-text max-w-md"
+                >
+                  Secure, encrypted network protocols for synchronized
+                  distribution of digital examination assets.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 md:w-1/4 md:justify-end">
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >C</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >DSA</span
+              >
+            </div>
+            <div class="flex items-center gap-6 z-10 relative"></div>
+          </div>
+          <div
+            class="row-hover-effect border-t border-b border-border py-12 px-4 group project-row flex flex-col md:flex-row items-start md:items-center justify-between gap-8 cursor-pointer relative"
+          >
+            <div class="flex items-center gap-12 flex-1">
+              <span
+                class="font-label-caps text-label-caps opacity-40 group-hover:opacity-60"
+                >[ 05 ]</span
+              >
+              <div class="flex flex-col gap-2">
+                <h3
+                  class="font-h1 text-4xl group-hover:italic transition-all duration-300 ease-in"
+                >
+                  Dual Elevator Controller
+                </h3>
+                <p
+                  class="font-metadata text-metadata text-secondary metadata-text max-w-md"
+                >
+                  Designed multi-floor elevator control simulation with priority
+                  scheduling. Optimized elevator movement to reduce wait time.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 md:w-1/4 md:justify-end">
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >C</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >Scheduling logic</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >DDCO</span
+              >
+            </div>
+            <div class="flex items-center gap-6 z-10 relative"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHOTOGRAPHY SECTION -->
+      <section
+        id="photography"
+        class="max-w-container-max mx-auto px-gutter pt-40 pb-20 border-t border-border"
+      >
+        <div
+          class="mb-16 md:mb-24 flex flex-col md:flex-row md:justify-between md:items-end gap-8 animate-3d"
+        >
+          <h2 class="font-h1 text-h1 text-ink m-0 p-0">PHOTOGRAPHY</h2>
+          <p
+            class="font-body text-body text-on-surface-variant max-w-[40ch] md:text-right m-0 p-0"
+          >
+            A study of structural forms and light interplay. Capturing moments
+            of stillness within constructed environments, emphasizing geometry
+            over ornament.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
+        >
+          <div class="md:col-span-5 flex flex-col gap-12">
+            <div
+              class="group relative overflow-hidden bg-surface aspect-[3/4] w-full border border-border animate-3d"
+              style="transition-delay: 0.1s"
+            >
+              <img
+                alt="Architectural facade"
+                class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                src="photos/IMG_0203.webp"
+              />
+            </div>
+            <div
+              class="group relative overflow-hidden bg-surface aspect-square w-full border border-border md:w-4/5 md:self-end animate-3d"
+              style="transition-delay: 0.2s"
+            >
+              <img
+                alt="Interior structure"
+                class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                src="photos/DSC01292.webp"
+              />
+            </div>
+            <div
+              class="group relative overflow-hidden bg-surface aspect-[4/3] w-full border border-border animate-3d"
+              style="transition-delay: 0.3s"
+            >
+              <img
+                alt="Urban detail"
+                class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                src="photos/IMG_2513.webp"
+              />
+            </div>
+          </div>
+          <div class="md:col-span-7 flex flex-col gap-12 md:mt-24">
+            <div
+              class="group relative overflow-hidden bg-surface aspect-[16/9] w-full border border-border animate-3d"
+              style="transition-delay: 0.15s"
+            >
+              <img
+                alt="Landscape minimal"
+                class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                src="photos/DSC00073_Original.webp"
+              />
+            </div>
+            <div
+              class="group relative overflow-hidden bg-surface aspect-[3/4] w-full md:w-3/4 border border-border animate-3d"
+              style="transition-delay: 0.25s"
+            >
+              <img
+                alt="Structural shadow"
+                class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                src="photos/IMG_6239%202.webp"
+              />
+            </div>
+            <div
+              class="group relative overflow-hidden bg-surface aspect-[4/5] w-full border border-border md:w-5/6 md:self-end animate-3d"
+              style="transition-delay: 0.35s"
+            >
+              <img
+                alt="Modern corridor"
+                class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                src="photos/giant%20wheel%202-2.webp"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section
+        id="contact"
+        class="bg-invert-bg text-invert-fg flex flex-col items-center justify-center relative overflow-hidden px-6 py-40 mt-20"
+      >
+        <div
+          class="max-w-container-max w-full flex flex-col items-center text-center"
+        >
+          <span
+            class="font-label-caps text-label-caps text-on-tertiary-container mb-8 block animate-3d"
+            >ESTABLISHING CONNECTION</span
+          >
+          <h2
+            class="font-h1 text-h1 mb-12 tracking-tight animate-3d"
+            style="transition-delay: 0.1s"
+          >
+            LET'S TALK
+          </h2>
+          <div
+            class="group relative flex flex-col md:flex-row items-center gap-6 mb-20 animate-3d"
+            style="transition-delay: 0.2s"
+          >
+            <a
+              class="font-h1 text-[clamp(1.5rem,4vw,3rem)] tracking-tight surgical-underline lowercase"
+              href="mailto:basavaprabhu046@gmail.com"
+            >
+              basavaprabhu046@gmail.com
+            </a>
+          </div>
+          <div
+            class="grid grid-cols-2 md:flex gap-12 md:gap-24 animate-3d"
+            style="transition-delay: 0.3s"
+          >
+            <div class="flex flex-col items-start md:items-center">
+              <span
+                class="font-label-caps text-[10px] text-on-tertiary-container mb-4 block"
+                >PLATFORM</span
+              >
+              <a
+                class="font-label-caps text-label-caps surgical-underline flex items-center gap-2"
+                href="https://github.com/Basavaprabhu46"
+                target="_blank"
+              >
+                GITHUB
+                <span class="material-symbols-outlined text-xs"
+                  >arrow_outward</span
+                >
+              </a>
+            </div>
+            <div class="flex flex-col items-start md:items-center">
+              <span
+                class="font-label-caps text-[10px] text-on-tertiary-container mb-4 block"
+                >NETWORK</span
+              >
+              <a
+                class="font-label-caps text-label-caps surgical-underline flex items-center gap-2"
+                href="https://www.linkedin.com/in/basava-prabhu/"
+                target="_blank"
+              >
+                LINKEDIN
+                <span class="material-symbols-outlined text-xs"
+                  >arrow_outward</span
+                >
+              </a>
+            </div>
+            <div class="flex flex-col items-start md:items-center">
+              <span
+                class="font-label-caps text-[10px] text-on-tertiary-container mb-4 block"
+                >SOCIAL</span
+              >
+              <a
+                class="font-label-caps text-label-caps surgical-underline flex items-center gap-2"
+                href="https://www.instagram.com/basava_prabhu_46/"
+              >
+                INSTAGRAM
+                <span class="material-symbols-outlined text-xs"
+                  >arrow_outward</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="w-full border-t border-border bg-bg pt-20 pb-12">
+      <div
+        class="max-w-container-max mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12"
+      >
+        <p class="font-label-caps text-[10px] text-secondary">
+          © 2024 BASAVA PRABHU — ALL RIGHTS RESERVED
+        </p>
+        <div class="flex gap-10 items-center">
+          <a
+            class="font-label-caps text-[10px] text-secondary hover:text-ink transition-colors"
+            href="https://github.com/Basavaprabhu46"
+            target="_blank"
+            >Github</a
+          >
+          <a
+            class="font-label-caps text-[10px] text-secondary hover:text-ink transition-colors"
+            href="https://www.linkedin.com/in/basava-prabhu/"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <a
+            class="font-label-caps text-[10px] text-secondary hover:text-ink transition-colors"
+            href="#"
+            >Twitter</a
+          >
+          <a
+            class="font-label-caps text-[10px] text-secondary hover:text-ink transition-colors"
+            href="mailto:basavaprabhu046@gmail.com"
+            >Email</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Prevent browser from restoring scroll position or scrolling to hash on load
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+
+      // Cursor handling
+      const cursor = document.querySelector(".custom-cursor");
+      const heroSection = document.querySelector("#home");
+      const heroNameShell = document.querySelector("#hero-name-shell");
+      const heroName = document.querySelector("#hero-name");
+
+      function isDarkCursorZone(target) {
+        return !!target?.closest("#contact");
+      }
+
+      function syncCursorZone(target) {
+        if (!cursor) return;
+        cursor.classList.toggle("cursor-on-dark", isDarkCursorZone(target));
+      }
+
+      function setCursorDefault(target) {
+        if (!cursor) return;
+        const isOverDark = isDarkCursorZone(target);
+        cursor.classList.remove("is-name-hover");
+        cursor.style.width = "8px";
+        cursor.style.height = "8px";
+        cursor.style.backgroundColor = isOverDark ? "#F5F4F0" : "#0A0A0A";
+        cursor.style.border = "none";
+        cursor.style.backdropFilter = "none";
+        cursor.style.webkitBackdropFilter = "none";
+        cursor.style.boxShadow = "none";
+        if (heroName) {
+          heroName.classList.remove("is-hollow-hover");
+        }
+        syncCursorZone(target);
+      }
+
+      function setCursorHover(target) {
+        if (!cursor) return;
+        const isOverDark = isDarkCursorZone(target);
+        cursor.classList.remove("is-name-hover");
+        cursor.style.width = "40px";
+        cursor.style.height = "40px";
+        cursor.style.backgroundColor = "transparent";
+        cursor.style.border = `1px solid ${isOverDark ? "#F5F4F0" : "#0A0A0A"}`;
+        cursor.style.backdropFilter = "none";
+        cursor.style.webkitBackdropFilter = "none";
+        cursor.style.boxShadow = "none";
+        if (heroName) {
+          heroName.classList.remove("is-hollow-hover");
+        }
+        syncCursorZone(target);
+      }
+
+      function setCursorNameHover(target) {
+        if (!cursor) return;
+        cursor.classList.add("is-name-hover");
+        cursor.style.backgroundColor = "transparent";
+        cursor.style.border = `1.5px solid ${isDarkCursorZone(target) ? "#F5F4F0" : "#0A0A0A"}`;
+        cursor.style.backdropFilter = "none";
+        cursor.style.webkitBackdropFilter = "none";
+        cursor.style.boxShadow = "none";
+        if (heroName) {
+          heroName.classList.add("is-hollow-hover");
+        }
+        syncCursorZone(target);
+      }
+
+      function updateHeroNameScale() {
+        if (!heroSection || !heroNameShell) return;
+
+        const rect = heroSection.getBoundingClientRect();
+        const sectionHeight = Math.max(
+          rect.height - window.innerHeight * 0.2,
+          1,
+        );
+        const rawProgress = -rect.top / sectionHeight;
+        const progress = Math.max(0, Math.min(rawProgress, 1));
+        const scale = 1 + progress * 0.9;
+        const translateY = progress * 120;
+
+        heroNameShell.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+      }
+
+      document.addEventListener("mousemove", (e) => {
+        if (!cursor) return;
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+
+        const isOverName = !!e.target.closest("#hero-name");
+        const isOverInteractive = !!e.target.closest(
+          "a, button, .cursor-pointer",
+        );
+
+        if (isOverName) {
+          setCursorNameHover(e.target);
+        } else if (isOverInteractive) {
+          setCursorHover(e.target);
+        } else {
+          setCursorDefault(e.target);
+        }
+
+        if (heroName && isOverName) {
+          const rect = heroName.getBoundingClientRect();
+          heroName.style.setProperty(
+            "--reveal-x",
+            `${e.clientX - rect.left}px`,
+          );
+          heroName.style.setProperty("--reveal-y", `${e.clientY - rect.top}px`);
+        }
+      });
+
+      window.addEventListener("scroll", updateHeroNameScale, { passive: true });
+      window.addEventListener("resize", updateHeroNameScale);
+      updateHeroNameScale();
+
+      // Intersection Observer for 3D reveal
+      document.addEventListener("DOMContentLoaded", () => {
+        updateHeroNameScale();
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-revealed", "in-view");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+
+        document
+          .querySelectorAll(
+            ".reveal-3d, .animate-3d, .scroll-3d-item, .scroll-3d-effect",
+          )
+          .forEach((el) => {
+            observer.observe(el);
+          });
+      });
+    </script>
+  </body>
+</html>
