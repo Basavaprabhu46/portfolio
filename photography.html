@@ -49,7 +49,9 @@
     </script>
     <style>
       html { scroll-behavior: smooth; }
-      body { cursor: none; }
+      @media (hover: hover) and (pointer: fine) {
+        body, a, button, figure { cursor: none; }
+      }
       .custom-cursor {
         width: 8px;
         height: 8px;
@@ -73,7 +75,13 @@
         transition: opacity .8s ease, transform .8s ease;
       }
       .gallery-item.is-visible { opacity: 1; transform: translateY(0); }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .gallery-item { opacity: 1; transform: none; transition: none; }
+        .custom-cursor { display: none !important; }
+      }
     </style>
+    <noscript><style>.gallery-item{opacity:1 !important;transform:none !important;}.custom-cursor{display:none !important;}</style></noscript>
   </head>
   <body class="bg-bg text-ink font-body selection:bg-ink selection:text-bg">
     <div class="custom-cursor hidden md:block"></div>
@@ -107,24 +115,24 @@
         <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-12 md:gap-12">
         <div class="flex flex-col gap-12 md:col-span-5">
           <figure class="gallery-item group relative aspect-[3/4] w-full overflow-hidden border border-border bg-surface">
-            <img alt="Architectural facade" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" src="photos/IMG_0203.webp" />
+            <img alt="Architectural facade in daylight" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" decoding="async" loading="lazy" src="photos/IMG_0203.webp" />
           </figure>
           <figure class="gallery-item group relative aspect-square w-full overflow-hidden border border-border bg-surface md:w-4/5 md:self-end">
-            <img alt="Interior structure" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" src="photos/DSC01292.webp" />
+            <img alt="Interior structure with geometric lines" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" decoding="async" loading="lazy" src="photos/DSC01292.webp" />
           </figure>
           <figure class="gallery-item group relative aspect-[4/3] w-full overflow-hidden border border-border bg-surface">
-            <img alt="Urban detail" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" src="photos/IMG_2513.webp" />
+            <img alt="Urban architectural detail" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" decoding="async" loading="lazy" src="photos/IMG_2513.webp" />
           </figure>
         </div>
         <div class="flex flex-col gap-12 md:col-span-7 md:mt-24">
           <figure class="gallery-item group relative aspect-[16/9] w-full overflow-hidden border border-border bg-surface">
-            <img alt="Landscape minimal" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" src="photos/DSC00073_Original.webp" />
+            <img alt="Minimal landscape in soft light" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" decoding="async" loading="lazy" src="photos/DSC00073_Original.webp" />
           </figure>
           <figure class="gallery-item group relative aspect-[3/4] w-full overflow-hidden border border-border bg-surface md:w-3/4">
-            <img alt="Structural shadow" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" src="photos/IMG_6239%202.webp" />
+            <img alt="Structural shadow study" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" decoding="async" loading="lazy" src="photos/IMG_6239-2.webp" />
           </figure>
           <figure class="gallery-item group relative aspect-[4/5] w-full overflow-hidden border border-border bg-surface md:w-5/6 md:self-end">
-            <img alt="Modern corridor" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" src="photos/giant%20wheel%202-2.webp" />
+            <img alt="Giant wheel against the sky" class="h-full w-full object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" decoding="async" loading="lazy" src="photos/giant-wheel-2-2.webp" />
           </figure>
         </div>
         </div>
@@ -145,24 +153,24 @@
             <span class="mb-16 block font-caps text-[10px] text-secondary">01</span>
             <h3 class="mb-4 font-h1 text-3xl">SKETCHING</h3>
             <!-- <p class="font-body text-body text-secondary">Observational drawing and painted studies focused on shape, proportion, and gesture.</p> -->
-             <img src="art/arya stark .webp" alt="" srcset="">
-             <img src="art/rhenera.webp" alt="" srcset="">
-             <img src="art/wave.webp" alt="" srcset="">
+             <img src="art/arya-stark.webp" alt="Arya Stark character sketch" class="mb-6 w-full border border-border bg-surface object-cover" loading="lazy" decoding="async" />
+             <img src="art/rhenera.webp" alt="Rhaenyra portrait sketch" class="mb-6 w-full border border-border bg-surface object-cover" loading="lazy" decoding="async" />
+             <img src="art/wave.webp" alt="Wave ink study" class="w-full border border-border bg-surface object-cover" loading="lazy" decoding="async" />
           </article>
           <article class="gallery-item border-b border-border py-8 md:border-b-0 md:px-8 md:border-r">
             <span class="mb-16 block font-caps text-[10px] text-secondary">02</span>
             <h3 class="mb-4 font-h1 text-3xl">DIGITAL ART</h3>
-            <img src="art/gurgantua.webp" alt="" srcset="">
-            <img src="art/dragon.webp" alt="" srcset="">
+            <img src="art/gurgantua.webp" alt="Gargantua-inspired digital artwork" class="mb-6 w-full border border-border bg-surface object-cover" loading="lazy" decoding="async" />
+            <img src="art/dragon.webp" alt="Dragon digital illustration" class="w-full border border-border bg-surface object-cover" loading="lazy" decoding="async" />
             <!-- <p class="font-body text-body text-secondary">Compositions that explore color, texture, and the balance between precision and expression.</p> -->
           </article>
           <article class="gallery-item py-8 md:pl-8">
             <span class="mb-16 block font-caps text-[10px] text-secondary">03</span>
             <h3 class="mb-4 font-h1 text-3xl">PAINTING</h3>
             <!-- <p class="font-body text-body text-secondary">Three-dimensional experiments with light, materials, and constructed environments.</p> -->
-            <img src="art/deer.webp" alt="" srcset="">
-             <img src="art/forest.webp" alt="" srcset="">
-             <img src="art/icarus.webp" alt="" srcset="">
+            <img src="art/deer.webp" alt="Deer painting study" class="mb-6 w-full border border-border bg-surface object-cover" loading="lazy" decoding="async" />
+             <img src="art/forest.webp" alt="Forest painting study" class="mb-6 w-full border border-border bg-surface object-cover" loading="lazy" decoding="async" />
+             <img src="art/icarus.webp" alt="Icarus painting study" class="w-full border border-border bg-surface object-cover" loading="lazy" decoding="async" />
           </article>
         </div>
       </section>
@@ -170,18 +178,21 @@
 
     <footer class="border-t border-border px-6 py-12 md:px-12">
       <div class="mx-auto flex max-w-container-max flex-col gap-6 font-caps text-[10px] text-secondary md:flex-row md:items-center md:justify-between">
-        <span>© 2024 BASAVA PRABHU</span>
+        <span>© <span id="year">2026</span> BASAVA PRABHU</span>
         <a href="index.html" class="hover:text-ink transition-colors">RETURN TO MAIN PAGE</a>
       </div>
     </footer>
 
     <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
       const cursor = document.querySelector(".custom-cursor");
       document.addEventListener("mousemove", (event) => {
-        if (!cursor) return;
+        if (!cursor || !finePointer) return;
         cursor.style.left = `${event.clientX}px`;
         cursor.style.top = `${event.clientY}px`;
-        cursor.classList.toggle("is-hover", Boolean(event.target.closest("a, figure")));
+        const target = event.target instanceof Element ? event.target : null;
+        cursor.classList.toggle("is-hover", Boolean(target && target.closest("a, button, figure")));
       });
 
       const observer = new IntersectionObserver((entries, instance) => {

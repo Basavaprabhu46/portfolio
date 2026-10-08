@@ -143,7 +143,16 @@
       }
 
       body {
-        cursor: none;
+        cursor: auto;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        body,
+        a,
+        button,
+        .cursor-pointer {
+          cursor: none;
+        }
       }
 
       .custom-cursor {
@@ -250,17 +259,6 @@
         transform: perspective(1200px) rotateX(0deg) translateY(0) scale(1);
       }
 
-      .project-row:hover .arrow-icon {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .arrow-icon {
-        opacity: 0;
-        transform: translateX(-10px);
-        transition: all 0.3s ease;
-      }
-
       .row-hover-effect {
         transition:
           background-color 0.2s ease,
@@ -284,7 +282,35 @@
         background-color: #0a0a0a;
         color: #f5f4f0;
       }
+
+      .filter-btn:hover {
+        border-color: #0a0a0a;
+      }
+
+      .filter-active {
+        background: #0a0a0a !important;
+        color: #f5f4f0 !important;
+        border-color: #0a0a0a !important;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .reveal-3d,
+        .animate-3d,
+        .scroll-3d-item,
+        .scroll-3d-effect {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .custom-cursor {
+          display: none !important;
+        }
+      }
     </style>
+    <noscript><style>.reveal-3d,.animate-3d,.scroll-3d-item,.scroll-3d-effect{opacity:1 !important;transform:none !important;}.custom-cursor{display:none !important;}#extra-projects{display:block !important;}#show-more-projects{display:none !important;}#project-filters{display:none !important;}</style></noscript>
   </head>
 
   <body class="bg-bg text-ink font-body selection:bg-ink selection:text-bg">
@@ -329,7 +355,17 @@
           >
         </div>
         <div class="md:hidden">
-          <span class="material-symbols-outlined text-ink">menu</span>
+          <button id="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="flex items-center p-2 -m-2">
+            <span class="material-symbols-outlined text-ink">menu</span>
+          </button>
+        </div>
+      </nav>
+      <nav id="mobile-menu" aria-label="Mobile" class="hidden md:hidden border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-sm">
+        <div class="flex flex-col px-6 py-4 gap-1 max-w-container-max mx-auto">
+          <a class="py-3 font-['DM_Mono'] uppercase tracking-widest text-xs text-zinc-500 hover:text-zinc-900 transition-colors" href="#about">About</a>
+          <a class="py-3 font-['DM_Mono'] uppercase tracking-widest text-xs text-zinc-500 hover:text-zinc-900 transition-colors" href="#projects">Work</a>
+          <a class="py-3 font-['DM_Mono'] uppercase tracking-widest text-xs text-zinc-500 hover:text-zinc-900 transition-colors" href="photography.html">Photography &amp; Art</a>
+          <a class="py-3 font-['DM_Mono'] uppercase tracking-widest text-xs text-zinc-500 hover:text-zinc-900 transition-colors" href="#contact">Contact</a>
         </div>
       </nav>
     </header>
@@ -613,92 +649,156 @@
             </p>
           </div>
         </div>
-        <div class="mb-32 animate-3d" style="transition-delay: 0.1s">
-          <div
-            class="group relative overflow-hidden bg-primary-container text-white p-8 md:p-16 min-h-[600px] flex flex-col justify-between"
+        <div
+          id="project-filters"
+          class="flex flex-wrap gap-2 mb-8 animate-3d"
+          role="group"
+          aria-label="Filter projects"
+        >
+          <button
+            type="button"
+            data-filter="all"
+            aria-pressed="true"
+            class="filter-btn filter-active font-label-caps text-[11px] border border-ink px-4 py-2 transition-colors duration-300"
           >
-            <div class="flex justify-between items-start z-10">
-              <div class="flex flex-col gap-2">
-                <span
-                  class="font-label-caps text-label-caps text-on-primary-container"
-                  >FEATURED WORK</span
-                >
-                <h3
-                  class="font-display-hero text-7xl md:text-9xl uppercase tracking-tight"
-                >
-                  Vigilex AI
-                </h3>
-              </div>
-              <div class="flex gap-4">
-                <span
-                  class="font-metadata text-metadata border border-white/20 px-3 py-1 rounded-full"
-                  >AI/ML</span
-                >
-                <span
-                  class="font-metadata text-metadata border border-white/20 px-3 py-1 rounded-full"
-                  >RAG</span
-                >
-              </div>
-            </div>
-            <div
-              class="relative w-full aspect-video md:absolute md:right-[-10%] md:bottom-[-10%] md:w-3/4 opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-            >
-              <img
-                alt="Tech Interface"
-                class="w-full h-full object-cover grayscale brightness-50 contrast-125"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg7U5b2rKygHSoRB1L6BEIFNyy-HnD13LAqEgSYQJYb34-Z8I-BwlyoknIj9rwVGtNnioPBeFuLAAwIpGuijOOqaXLIU-5szfeoCgZS8nymQVIuGPJc6jSa2-d9jW-WxVXXV2jfusEvNDD4M8Xf1EHU3IIbm86vA9y9EorU4aJzeKydzcYpScVIYXlmTVkj6bk16whqSWc_mjq9SJCAtcJMw-anyIeF0CoWWCwPXF6J58Fe64RUer165HBzaLU-PzvIQeJEjRyNrfG"
-              />
-            </div>
-            <div class="z-10 max-w-xl">
-              <p class="font-body text-xl md:text-2xl mb-8 text-white/80">
-                An AI-powered privacy policy analyzer and legal Q&A tool built
-                with RAG (Retrieval-Augmented Generation), grounded in the DPDP
-                Act 2023, GDPR, and the IT Act 2000.
-              </p>
-              <div class="flex flex-wrap gap-8">
-                <a
-                  class="inline-flex items-center gap-4 font-label-caps text-label-caps border-b border-white pb-2 hover:gap-6 transition-all"
-                  href="https://github.com/Basavaprabhu46/Vigilex-AI"
-                  target="_blank"
-                >
-                  GITHUB
-                  <span
-                    class="material-symbols-outlined"
-                    data-icon="open_in_new"
-                    >open_in_new</span
-                  >
-                </a>
-              </div>
-            </div>
-          </div>
+            ALL (9)
+          </button>
+          <button
+            type="button"
+            data-filter="ai-ml"
+            aria-pressed="false"
+            class="filter-btn font-label-caps text-[11px] border border-border px-4 py-2 transition-colors duration-300"
+          >
+            AI-ML (4)
+          </button>
+          <button
+            type="button"
+            data-filter="web"
+            aria-pressed="false"
+            class="filter-btn font-label-caps text-[11px] border border-border px-4 py-2 transition-colors duration-300"
+          >
+            WEB (2)
+          </button>
+          <button
+            type="button"
+            data-filter="systems"
+            aria-pressed="false"
+            class="filter-btn font-label-caps text-[11px] border border-border px-4 py-2 transition-colors duration-300"
+          >
+            SYSTEMS (3)
+          </button>
         </div>
         <div
-          class="flex flex-col text-ink animate-3d"
+          id="project-grid"
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 animate-3d"
           style="transition-delay: 0.2s"
         >
-          <div
-            class="row-hover-effect border-t border-border py-12 px-4 group project-row flex flex-col md:flex-row items-start md:items-center justify-between gap-8 cursor-pointer relative"
+          <article
+            data-category="ai-ml"
+            class="row-hover-effect border border-ink bg-primary-container text-white p-6 md:p-10 md:col-span-2 flex flex-col gap-5"
           >
-            <div class="flex items-center gap-12 flex-1">
+            <div class="flex items-start justify-between gap-4">
               <span
-                class="font-label-caps text-label-caps opacity-40 group-hover:opacity-60"
-                >[ 01 ]</span
+                class="font-label-caps text-label-caps text-on-primary-container"
+                >[ 01 ] · AI-ML</span
               >
-              <div class="flex flex-col gap-2">
-                <h3
-                  class="font-h1 text-4xl group-hover:italic transition-all duration-300 ease-in"
+              <span class="flex flex-wrap justify-end gap-2">
+                <span
+                  class="font-label-caps text-[10px] border border-white/20 px-3 py-1"
+                  >FINAL-YEAR</span
                 >
-                  LSA SMS Spam Detection
-                </h3>
-                <p
-                  class="font-metadata text-metadata text-secondary metadata-text max-w-md"
+                <span
+                  class="font-label-caps text-[10px] border border-white/20 px-3 py-1"
+                  >IN PROGRESS</span
                 >
-                  SVD + TF-IDF based spam classifier using orthogonal projection
-                  and centroid classification.
-                </p>
-              </div>
+              </span>
             </div>
-            <div class="flex flex-wrap gap-2 md:w-1/4 md:justify-end">
+            <h3
+              class="font-display-hero text-5xl md:text-7xl uppercase leading-none tracking-tight"
+            >
+              Citation Hallucination Benchmark
+            </h3>
+            <p class="font-body text-base md:text-lg text-white/70 max-w-2xl">
+              Detecting and mitigating citation hallucination in multilingual,
+              code-mixed legal query systems for Indian law — measuring how
+              language switching shifts hallucination rates, and testing
+              retrieval grounding plus consistency verification as mitigations.
+            </p>
+            <div class="flex flex-wrap items-center gap-2">
+              <span
+                class="font-label-caps text-[10px] border border-white/20 px-3 py-1"
+                >AI/ML</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-white/20 px-3 py-1"
+                >BENCHMARK</span
+              >
+              <span
+                class="font-label-caps text-[10px] text-on-primary-container ml-2"
+                >BATCH 30 · GUIDE DR. VANDANA M L</span
+              >
+            </div>
+          </article>
+          <article
+            data-category="ai-ml"
+            class="row-hover-effect group border border-border p-6 md:p-8 flex flex-col gap-4"
+          >
+            <div class="flex items-start justify-between gap-4">
+              <span class="font-label-caps text-label-caps opacity-40"
+                >[ 02 ] · AI-ML</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >RAG</span
+              >
+            </div>
+            <h3 class="font-h1 text-3xl">Vigilex AI</h3>
+            <p class="font-metadata text-metadata text-secondary metadata-text">
+              AI-powered privacy policy analyzer and legal Q&amp;A tool built
+              with RAG, grounded in the DPDP Act 2023, GDPR, and the IT Act
+              2000.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >AI/ML</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >RAG</span
+              >
+            </div>
+            <div class="flex items-center gap-6 mt-auto pt-2">
+              <a
+                class="font-label-caps text-xs hover:underline inline-flex items-center gap-2"
+                href="https://github.com/Basavaprabhu46/Vigilex-AI"
+                target="_blank"
+                >GITHUB
+                <span class="material-symbols-outlined text-xs"
+                  >arrow_outward</span
+                ></a
+              >
+            </div>
+          </article>
+          <article
+            data-category="ai-ml"
+            class="row-hover-effect group border border-border p-6 md:p-8 flex flex-col gap-4"
+          >
+            <div class="flex items-start justify-between gap-4">
+              <span class="font-label-caps text-label-caps opacity-40"
+                >[ 03 ] · AI-ML</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >ML</span
+              >
+            </div>
+            <h3 class="font-h1 text-3xl">LSA SMS Spam Detection</h3>
+            <p class="font-metadata text-metadata text-secondary metadata-text">
+              SVD + TF-IDF based spam classifier using orthogonal projection
+              and centroid classification.
+            </p>
+            <div class="flex flex-wrap gap-2">
               <span
                 class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
                 >PYTHON</span
@@ -712,45 +812,131 @@
                 >ML</span
               >
             </div>
-            <div class="flex items-center gap-6 z-10 relative">
+            <div class="flex items-center gap-6 mt-auto pt-2">
               <a
-                class="font-label-caps text-xs hover:underline"
+                class="font-label-caps text-xs hover:underline inline-flex items-center gap-2"
                 href="https://github.com/Basavaprabhu46/Latent-Semantic-Analysis-SMS-Spam-Detection"
                 target="_blank"
-                >GITHUB</a
+                >GITHUB
+                <span class="material-symbols-outlined text-xs"
+                  >arrow_outward</span
+                ></a
               >
-              <div class="arrow-icon">
-                <span
-                  class="material-symbols-outlined text-4xl"
-                  data-icon="north_east"
-                  >north_east</span
-                >
-              </div>
             </div>
-          </div>
-          <div
-            class="row-hover-effect border-t border-border py-12 px-4 group project-row flex flex-col md:flex-row items-start md:items-center justify-between gap-8 cursor-pointer relative"
+          </article>
+          <article
+            data-category="web"
+            class="row-hover-effect group border border-border p-6 md:p-8 flex flex-col gap-4"
           >
-            <div class="flex items-center gap-12 flex-1">
-              <span
-                class="font-label-caps text-label-caps opacity-40 group-hover:opacity-60"
-                >[ 02 ]</span
+            <div class="flex items-start justify-between gap-4">
+              <span class="font-label-caps text-label-caps opacity-40"
+                >[ 04 ] · WEB</span
               >
-              <div class="flex flex-col gap-2">
-                <h3
-                  class="font-h1 text-4xl group-hover:italic transition-all duration-300 ease-in"
-                >
-                  Typing Speed Test
-                </h3>
-                <p
-                  class="font-metadata text-metadata text-secondary metadata-text max-w-md"
-                >
-                  Precision-focused web application measuring WPM and accuracy
-                  with real-time feedback loops.
-                </p>
-              </div>
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >PRIVATE</span
+              >
             </div>
-            <div class="flex flex-wrap gap-2 md:w-1/4 md:justify-end">
+            <h3 class="font-h1 text-3xl">Huddle — Capstone Workspace</h3>
+            <p class="font-metadata text-metadata text-secondary metadata-text">
+              Private shared workspace for a 4-person capstone: Kanban board,
+              whiteboard, docs, calendar, and reviews with realtime sync.
+              Source kept private.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >JAVASCRIPT</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >SUPABASE</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >REALTIME</span
+              >
+            </div>
+            <div class="flex items-center gap-6 mt-auto pt-2">
+              <span class="font-label-caps text-[10px] opacity-50"
+                >SOURCE PRIVATE — NO LINK</span
+              >
+            </div>
+          </article>
+          <article
+            data-category="ai-ml"
+            class="row-hover-effect group border border-border p-6 md:p-8 flex flex-col gap-4"
+          >
+            <div class="flex items-start justify-between gap-4">
+              <span class="font-label-caps text-label-caps opacity-40"
+                >[ 05 ] · AI-ML</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >LIVE DEMO</span
+              >
+            </div>
+            <h3 class="font-h1 text-3xl">NeuralViz</h3>
+            <p class="font-metadata text-metadata text-secondary metadata-text">
+              Single-file offline visualizer for PyTorch .pth checkpoints:
+              drag and drop a state_dict to explore layers, weights and
+              biases with live forward-pass activations. No install, no
+              server, 100% private.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >JAVASCRIPT</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >PYTORCH</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >CANVAS</span
+              >
+            </div>
+            <div class="flex items-center gap-6 mt-auto pt-2">
+              <a
+                class="font-label-caps text-xs hover:underline inline-flex items-center gap-2"
+                href="https://github.com/Basavaprabhu46/NeuralViz"
+                target="_blank"
+                >GITHUB
+                <span class="material-symbols-outlined text-xs"
+                  >arrow_outward</span
+                ></a
+              >
+              <a
+                class="font-label-caps text-xs hover:underline inline-flex items-center gap-2"
+                href="https://basavaprabhu46.github.io/NeuralViz/"
+                target="_blank"
+                >LIVE
+                <span class="material-symbols-outlined text-xs"
+                  >arrow_outward</span
+                ></a
+              >
+            </div>
+          </article>
+          <article
+            data-category="web"
+            class="row-hover-effect group border border-border p-6 md:p-8 flex flex-col gap-4"
+          >
+            <div class="flex items-start justify-between gap-4">
+              <span class="font-label-caps text-label-caps opacity-40"
+                >[ 06 ] · WEB</span
+              >
+              <span
+                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                >MERN</span
+              >
+            </div>
+            <h3 class="font-h1 text-3xl">Typing Speed Test</h3>
+            <p class="font-metadata text-metadata text-secondary metadata-text">
+              Precision-focused web application measuring WPM and accuracy
+              with real-time feedback loops.
+            </p>
+            <div class="flex flex-wrap gap-2">
               <span
                 class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
                 >MERN</span
@@ -764,128 +950,132 @@
                 >TAILWIND</span
               >
             </div>
-            <div class="flex items-center gap-6 z-10 relative">
+            <div class="flex items-center gap-6 mt-auto pt-2">
               <a
-                class="font-label-caps text-xs hover:underline"
+                class="font-label-caps text-xs hover:underline inline-flex items-center gap-2"
                 href="https://github.com/Basavaprabhu46"
                 target="_blank"
-                >GITHUB</a
+                >GITHUB
+                <span class="material-symbols-outlined text-xs"
+                  >arrow_outward</span
+                ></a
               >
-              <div class="arrow-icon">
+            </div>
+          </article>
+        </div>
+        <div id="extra-projects" class="hidden">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            <article
+              data-category="systems"
+              class="row-hover-effect group border border-border p-6 flex flex-col gap-4"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <span class="font-label-caps text-label-caps opacity-40"
+                  >[ 07 ] · SYSTEMS</span
+                >
                 <span
-                  class="material-symbols-outlined text-4xl"
-                  data-icon="north_east"
-                  >north_east</span
+                  class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                  >PYTHON</span
                 >
               </div>
-            </div>
-          </div>
-          <div
-            class="row-hover-effect border-t border-border py-12 px-4 group project-row flex flex-col md:flex-row items-start md:items-center justify-between gap-8 cursor-pointer relative"
-          >
-            <div class="flex items-center gap-12 flex-1">
-              <span
-                class="font-label-caps text-label-caps opacity-40 group-hover:opacity-60"
-                >[ 03 ]</span
+              <h3 class="font-h1 text-2xl">Library Management System</h3>
+              <p
+                class="font-metadata text-metadata text-secondary metadata-text"
               >
-              <div class="flex flex-col gap-2">
-                <h3
-                  class="font-h1 text-4xl group-hover:italic transition-all duration-300 ease-in"
+                Built a GUI-based application to manage books and users.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                <span
+                  class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                  >PYTHON</span
                 >
-                  Library Management System
-                </h3>
-                <p
-                  class="font-metadata text-metadata text-secondary metadata-text max-w-md"
+                <span
+                  class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                  >TKINTER</span
                 >
-                  Built a GUI-based application to manage books and users.
-                </p>
               </div>
-            </div>
-            <div class="flex flex-wrap gap-2 md:w-1/4 md:justify-end">
-              <span
-                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
-                >PYTHON</span
-              >
-              <span
-                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
-                >Tkinter</span
-              >
-            </div>
-            <div class="flex items-center gap-6 z-10 relative"></div>
-          </div>
-          <div
-            class="row-hover-effect border-t border-border py-12 px-4 group project-row flex flex-col md:flex-row items-start md:items-center justify-between gap-8 cursor-pointer relative"
-          >
-            <div class="flex items-center gap-12 flex-1">
-              <span
-                class="font-label-caps text-label-caps opacity-40 group-hover:opacity-60"
-                >[ 04 ]</span
-              >
-              <div class="flex flex-col gap-2">
-                <h3
-                  class="font-h1 text-4xl group-hover:italic transition-all duration-300 ease-in"
+            </article>
+            <article
+              data-category="systems"
+              class="row-hover-effect group border border-border p-6 flex flex-col gap-4"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <span class="font-label-caps text-label-caps opacity-40"
+                  >[ 08 ] · SYSTEMS</span
                 >
-                  Exam Paper Distributor
-                </h3>
-                <p
-                  class="font-metadata text-metadata text-secondary metadata-text max-w-md"
+                <span
+                  class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                  >C</span
                 >
-                  Secure, encrypted network protocols for synchronized
-                  distribution of digital examination assets.
-                </p>
               </div>
-            </div>
-            <div class="flex flex-wrap gap-2 md:w-1/4 md:justify-end">
-              <span
-                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
-                >C</span
+              <h3 class="font-h1 text-2xl">Exam Paper Distributor</h3>
+              <p
+                class="font-metadata text-metadata text-secondary metadata-text"
               >
-              <span
-                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
-                >DSA</span
-              >
-            </div>
-            <div class="flex items-center gap-6 z-10 relative"></div>
-          </div>
-          <div
-            class="row-hover-effect border-t border-b border-border py-12 px-4 group project-row flex flex-col md:flex-row items-start md:items-center justify-between gap-8 cursor-pointer relative"
-          >
-            <div class="flex items-center gap-12 flex-1">
-              <span
-                class="font-label-caps text-label-caps opacity-40 group-hover:opacity-60"
-                >[ 05 ]</span
-              >
-              <div class="flex flex-col gap-2">
-                <h3
-                  class="font-h1 text-4xl group-hover:italic transition-all duration-300 ease-in"
+                Secure, encrypted network protocols for synchronized
+                distribution of digital examination assets.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                <span
+                  class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                  >C</span
                 >
-                  Dual Elevator Controller
-                </h3>
-                <p
-                  class="font-metadata text-metadata text-secondary metadata-text max-w-md"
+                <span
+                  class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                  >DSA</span
                 >
-                  Designed multi-floor elevator control simulation with priority
-                  scheduling. Optimized elevator movement to reduce wait time.
-                </p>
               </div>
-            </div>
-            <div class="flex flex-wrap gap-2 md:w-1/4 md:justify-end">
-              <span
-                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
-                >C</span
+            </article>
+            <article
+              data-category="systems"
+              class="row-hover-effect group border border-border p-6 flex flex-col gap-4"
+            >
+              <div class="flex items-start justify-between gap-4">
+                <span class="font-label-caps text-label-caps opacity-40"
+                  >[ 09 ] · SYSTEMS</span
+                >
+                <span
+                  class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                  >DDCO</span
+                >
+              </div>
+              <h3 class="font-h1 text-2xl">Dual Elevator Controller</h3>
+              <p
+                class="font-metadata text-metadata text-secondary metadata-text"
               >
-              <span
-                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
-                >Scheduling logic</span
-              >
-              <span
-                class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
-                >DDCO</span
-              >
-            </div>
-            <div class="flex items-center gap-6 z-10 relative"></div>
+                Designed multi-floor elevator control simulation with priority
+                scheduling. Optimized elevator movement to reduce wait time.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-auto pt-2">
+                <span
+                  class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                  >C</span
+                >
+                <span
+                  class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                  >SCHEDULING</span
+                >
+                <span
+                  class="font-label-caps text-[10px] border border-border border-color-swap px-3 py-1"
+                  >DDCO</span
+                >
+              </div>
+            </article>
           </div>
         </div>
+        <div id="show-more-wrap" class="mt-10 flex justify-center animate-3d">
+          <button
+            id="show-more-projects"
+            type="button"
+            aria-expanded="false"
+            aria-controls="extra-projects"
+            class="group inline-flex items-center gap-4 border border-ink px-6 py-4 font-label-caps text-label-caps hover:bg-ink hover:text-bg transition-colors duration-300"
+          >
+            <span id="show-more-label">SHOW MORE PROJECTS (3)</span>
+            <span id="show-more-icon" class="material-symbols-outlined text-base transition-transform duration-300">expand_more</span>
+          </button>
+        </div>
+
       </section>
 
       <!-- PHOTOGRAPHY INVITATION -->
@@ -1008,7 +1198,7 @@
         class="max-w-container-max mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12"
       >
         <p class="font-label-caps text-[10px] text-secondary">
-          © 2024 BASAVA PRABHU — ALL RIGHTS RESERVED
+          © <span id="year">2026</span> BASAVA PRABHU — ALL RIGHTS RESERVED
         </p>
         <div class="flex gap-10 items-center">
           <a
@@ -1038,7 +1228,90 @@
     </footer>
 
     <script>
-      // Prevent browser from restoring scroll position or scrolling to hash on load
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Mobile menu toggle
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (menuButton && mobileMenu) {
+        const icon = menuButton.querySelector(".material-symbols-outlined");
+        menuButton.addEventListener("click", () => {
+          const isHidden = mobileMenu.classList.toggle("hidden");
+          menuButton.setAttribute("aria-expanded", String(!isHidden));
+          menuButton.setAttribute("aria-label", isHidden ? "Open menu" : "Close menu");
+          if (icon) icon.textContent = isHidden ? "menu" : "close";
+        });
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open menu");
+            if (icon) icon.textContent = "menu";
+          });
+        });
+      }
+
+      const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Show more / show less projects ([06]-[08])
+      const showMoreBtn = document.getElementById("show-more-projects");
+      const showMoreWrap = document.getElementById("show-more-wrap");
+      const extraProjects = document.getElementById("extra-projects");
+      const showMoreLabel = document.getElementById("show-more-label");
+      const showMoreIcon = document.getElementById("show-more-icon");
+      function setShowMore(expanded) {
+        if (!showMoreBtn || !extraProjects) return;
+        extraProjects.classList.toggle("hidden", !expanded);
+        showMoreBtn.setAttribute("aria-expanded", String(expanded));
+        if (showMoreLabel) {
+          showMoreLabel.textContent = expanded
+            ? "SHOW LESS PROJECTS"
+            : "SHOW MORE PROJECTS (3)";
+        }
+        if (showMoreIcon)
+          showMoreIcon.textContent = expanded ? "expand_less" : "expand_more";
+      }
+      if (showMoreBtn && extraProjects) {
+        showMoreBtn.addEventListener("click", () => {
+          setShowMore(extraProjects.classList.contains("hidden"));
+        });
+      }
+
+      // Project filters: ALL / AI-ML / WEB / SYSTEMS
+      const filterBtns = document.querySelectorAll(
+        "#project-filters [data-filter]",
+      );
+      if (filterBtns.length) {
+        const cards = document.querySelectorAll(
+          "#project-grid [data-category], #extra-projects [data-category]",
+        );
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const f = btn.dataset.filter;
+            filterBtns.forEach((b) => {
+              const active = b === btn;
+              b.classList.toggle("filter-active", active);
+              b.setAttribute("aria-pressed", String(active));
+            });
+            let extraMatch = false;
+            cards.forEach((card) => {
+              const match = f === "all" || card.dataset.category === f;
+              card.classList.toggle("hidden", !match);
+              if (match && extraProjects && extraProjects.contains(card))
+                extraMatch = true;
+            });
+            if (f === "all") {
+              setShowMore(false);
+              if (showMoreWrap) showMoreWrap.style.display = "";
+            } else {
+              if (extraProjects)
+                extraProjects.classList.toggle("hidden", !extraMatch);
+              if (showMoreWrap) showMoreWrap.style.display = "none";
+            }
+          });
+        });
+      }
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
@@ -1108,7 +1381,7 @@
       }
 
       function updateHeroNameScale() {
-        if (!heroSection || !heroNameShell) return;
+        if (!heroSection || !heroNameShell || prefersReducedMotion) return;
 
         const rect = heroSection.getBoundingClientRect();
         const sectionHeight = Math.max(
@@ -1124,21 +1397,22 @@
       }
 
       document.addEventListener("mousemove", (e) => {
-        if (!cursor) return;
+        if (!cursor || !finePointer) return;
         cursor.style.left = e.clientX + "px";
         cursor.style.top = e.clientY + "px";
 
-        const isOverName = !!e.target.closest("#hero-name");
-        const isOverInteractive = !!e.target.closest(
+        const target = e.target instanceof Element ? e.target : null;
+        const isOverName = !!target?.closest("#hero-name");
+        const isOverInteractive = !!target?.closest(
           "a, button, .cursor-pointer",
         );
 
         if (isOverName) {
-          setCursorNameHover(e.target);
+          setCursorNameHover(target);
         } else if (isOverInteractive) {
-          setCursorHover(e.target);
+          setCursorHover(target);
         } else {
-          setCursorDefault(e.target);
+          setCursorDefault(target);
         }
 
         if (heroName && isOverName) {
